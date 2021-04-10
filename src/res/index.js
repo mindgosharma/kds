@@ -1,4 +1,4 @@
-import Assets from "../res/Assets";
+// import Assets from "../res/Assets";
 import Colors from '../res/Colors';
 import Constants from '../res/Constants';
 import Strings from '../res/String';
@@ -9,7 +9,7 @@ import AsyncStorageValues from "../res/AsyncStorageValues";
 
 // Exorting all the resources from index To keep track of all the resource files
 export {
-    Assets,
+    // Assets,
     Colors,
     Constants,
     Strings,

@@ -23,7 +23,7 @@ export default {
     putRequest: 'PUT',
     baseURL: AppInfo.baseUrlAPI + "/" + AppInfo.apiVersion + "/",
 
-    dummy_api: '/web/getTnC',
+    dummy_api: 'https://jsonplaceholder.typicode.com/posts',
     verifyOtp: 'common/verifyOTP',
     countryCode: 'common/getCountryCode',
     login: 'common/login',
