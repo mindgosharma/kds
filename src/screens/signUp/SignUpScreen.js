@@ -4,34 +4,18 @@ import { connect } from 'react-redux';
 import { loginAction } from "../../redux/actions";
 import { URL } from '../../res/index';
 // import Utility, { showToast, validateEmailAddress, validateEmptyField, _storeData } from "../../utils/Utility";
-// import { fetchRequest, fetchMultiPartRequest } from '../../utils/NetworkManager';
+import { fetchRequest, fetchMultiPartRequest } from '../../utils/NetworkManager';
 
 
 const SignUpScreen = (props) => {
 
     React.useEffect(() => {
-        // callApiTest()
-    },[])
+        callApiTest()
+    }, [])
 
     const callApiTest = async () => {
-        // fetchRequest()
-        // fetchMultiPartRequest()
-        // const res = await NetworkManager.networkManagerInstance.fetchRequest(URL.dummy_api, URL.getRequest, true, parameterData)
-        //  console.log("This is checking api callingh method",JSON.stringify(res))
-        if (res.statusCode === 200) {
-            console.log("hello")
-            // let showPopUpMesssage = res.message
-            // let base_Price = res.data.base_price
-            // let country_currency = res.data.currency
-            // Session.sharedInstance.userDetails[Constants.userDetailsFields.isEditableReferral] = this.state.referralCode != '' ? false : true
-            // NetworkManager.networkManagerInstance.progressBarRequest(false)
-            // this.setState({ isPopVisible: true, isEditableReferral: false, popUpMessage: `${showPopUpMesssage} ${country_currency} ${base_Price}${'.'}` })
-        } else {
-            // NetworkManager.networkManagerInstance.progressBarRequest(false)
-            // this.setState({ referralCode: '' })
-            // showToast(res.message)
-            console.log('hii')
-        }
+        const res = await fetchRequest(URL.dummy_api, URL.getRequest)
+        console.log("hello this is multi part data", JSON.stringify(res))
     }
 
     return (
