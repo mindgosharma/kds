@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-const LoginScreen = () => {
+const HomeScreen = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={{fontSize: 14, color: "white"}}>
-                Login Screen
+            <Text style={{color: 'white',fontSize: 14}}>
+                Home Screen
             </Text>
         </View>
     )
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default LoginScreen;
+export default HomeScreen;

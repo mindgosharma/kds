@@ -21,7 +21,7 @@ const SignUpScreen = (props) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={() => { props.navigation.navigate('Login') }}>
-                <Text style={{ color: 'white', fontSize: 24 }}>
+                <Text style={{ color: 'white', fontSize: 14 }}>
                     Sign Up
                 </Text>
             </TouchableOpacity>
@@ -32,7 +32,9 @@ const SignUpScreen = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'green'
+        backgroundColor: 'green',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })
 

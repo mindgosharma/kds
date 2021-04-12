@@ -9,14 +9,14 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native"
-import MainStackNavigator from './src/navigation/MainStackNavigator';
+import { DrawerNav } from './src/navigation/MainStackNavigator';
 
 const App = () => {
 
   return (
     <View style={styles.contianer}>
       <NavigationContainer>
-         <MainStackNavigator/>
+        <DrawerNav />
       </NavigationContainer>
     </View>
   );

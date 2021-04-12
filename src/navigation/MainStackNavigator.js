@@ -222,18 +222,61 @@
 
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-
-import { SignUpScreen, LoginScreen } from '../screens/index';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import {
+  SignUpScreen,
+  LoginScreen,
+  HomeScreen,
+  HoroscopeScreen,
+  NewsScreen,
+  ProfileScreen
+} from '../screens/index';
 
 const Stack = createStackNavigator()
 
 const MainStackNavigator = () => {
-    return (
-        <Stack.Navigator>
-            <Stack.Screen name="SignUp" component={SignUpScreen} />
-            <Stack.Screen name="Login" component={LoginScreen} />
-        </Stack.Navigator>
-    )
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}
+    >
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Horoscope" component={HoroscopeScreen} />
+      <Stack.Screen name="News" component={NewsScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="SignUp" component={SignUpScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="AppDrawer" component={DrawerNav} />
+    </Stack.Navigator>
+  )
 }
 
-export default MainStackNavigator
+const Tab = createBottomTabNavigator();
+const BottomTabsNav = () => {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={MainStackNavigator} />
+      <Tab.Screen name="Horoscope" component={HoroscopeScreen} />
+      <Tab.Screen name="News" component={NewsScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  );
+}
+
+const Drawer = createDrawerNavigator();
+const DrawerNav = () => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={BottomTabsNav} />
+      <Drawer.Screen name="Login" component={LoginScreen} />
+    </Drawer.Navigator>
+  );
+}
+
+export {
+  MainStackNavigator,
+  BottomTabsNav,
+  DrawerNav
+}
