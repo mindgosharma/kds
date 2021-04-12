@@ -1,23 +1,30 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import { Header } from 'react-native/Libraries/NewAppScreen';
+import { HomeHeader } from '../../component/index';
 
-const ProfileScreen = () => {
+const ProfileScreen = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={{color: 'white',fontSize: 14}}>
-                Profile Screen
-            </Text>
+             <View style={styles.headerContainer}>
+                 <HomeHeader {...props}/>
+             </View>
+             <View style={styles.bodyContainer}>
+             </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: 'green',
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex: 10,
+    },
+    headerContainer:{
+        flex: 1
+    },
+    bodyContainer:{
+        flex: 8
     }
 })
 
