@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Colors } from '../../res/index';
 
 const HomeHeader=(props)=>{
         return(
@@ -31,7 +32,7 @@ const HomeHeader=(props)=>{
 const styles = StyleSheet.create({
     container: {
         flex: 10,
-        backgroundColor: '#a89932',
+        backgroundColor: Colors.primaryColor,
         flexDirection: 'row',
         justifyContent: 'space-between',
     }

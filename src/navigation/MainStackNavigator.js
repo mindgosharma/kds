@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { SideMenu } from '../component/index';
 import {
+  SplashScreen,
   SignUpScreen,
   LoginScreen,
   HomeScreen,
@@ -21,6 +22,7 @@ const MainStackNavigator = () => {
         headerShown: false
       }}
     >
+      <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Horoscope" component={HoroscopeScreen} />
       <Stack.Screen name="News" component={NewsScreen} />
