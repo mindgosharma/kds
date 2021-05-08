@@ -5,6 +5,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { SideMenu } from '../component/index';
 import {
   SplashScreen,
+  LoginSignUpScreen,
   SignUpScreen,
   LoginScreen,
   HomeScreen,
@@ -23,6 +24,7 @@ const MainStackNavigator = () => {
       }}
     >
       <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Screen name="LoginSignUp" component={LoginSignUpScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Horoscope" component={HoroscopeScreen} />
       <Stack.Screen name="News" component={NewsScreen} />
