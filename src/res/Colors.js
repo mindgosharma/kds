@@ -8,7 +8,7 @@ export default {
     secondaryColor: '#682826',
     tertiary: '#8D8D8D',
     quarternary: '#707070',
-    // pentaColor: '#C94B4F',
+    pentaColor: '#FAF7E0',
     // hexaColor: '#474747',
     // septaColor: '#3B3B3B',
     // octaColor: '#9DC0DF',

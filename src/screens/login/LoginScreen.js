@@ -1,13 +1,16 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import { LoginComponent } from '../../component/index';
+import { Strings } from '../../res';
 
-const LoginScreen = () => {
+const LoginScreen = (props) => {
 
     return (
         <View style={styles.container}>
-            <Text style={{fontSize: 14, color: "white"}}>
-                Login Screen
-            </Text>
+            <LoginComponent
+                backTitle={Strings.login}
+                {...props}
+            />
         </View>
     )
 }
@@ -15,9 +18,6 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'green',
-        justifyContent: 'center',
-        alignItems: 'center'
     }
 })
 

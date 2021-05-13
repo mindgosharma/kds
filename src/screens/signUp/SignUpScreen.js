@@ -2,7 +2,8 @@ import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { loginAction } from "../../redux/actions";
-import { URL } from '../../res/index';
+import { URL, Strings } from '../../res/index';
+import { LoginComponent } from '../../component/index';
 // import Utility, { showToast, validateEmailAddress, validateEmptyField, _storeData } from "../../utils/Utility";
 import { fetchRequest, fetchMultiPartRequest } from '../../utils/NetworkManager';
 
@@ -20,11 +21,10 @@ const SignUpScreen = (props) => {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => { props.navigation.navigate('Login') }}>
-                <Text style={{ color: 'white', fontSize: 14 }}>
-                    Sign Up
-                </Text>
-            </TouchableOpacity>
+             <LoginComponent
+                backTitle={Strings.signup}
+                {...props}
+            />
         </View>
     )
 }
@@ -32,9 +32,6 @@ const SignUpScreen = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'green',
-        justifyContent: 'center',
-        alignItems: 'center'
     }
 })
 
