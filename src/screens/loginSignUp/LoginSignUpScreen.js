@@ -1,56 +1,45 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { connect } from 'react-redux';
-import { loginAction } from "../../redux/actions";
-import { URL } from '../../res/index';
-// import Utility, { showToast, validateEmailAddress, validateEmptyField, _storeData } from "../../utils/Utility";
-import { fetchRequest, fetchMultiPartRequest } from '../../utils/NetworkManager';
+import {View, Text, Image, StyleSheet} from  'react-native';
+import { Colors, Assets, Strings } from '../../res/index';
 
-
-const LoginSignUpScreen = (props) => {
-
-    React.useEffect(() => {
-        callApiTest()
-    }, [])
-
-    const callApiTest = async () => {
-        const res = await fetchRequest(URL.dummy_api, URL.getRequest)
-        console.log("hello this is multi part data", JSON.stringify(res))
-    }
-
-    return (
+const LoginSignupScreen = () => {
+    return(
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => { props.navigation.navigate('Login') }}>
-                <Text style={{ color: 'white', fontSize: 14 }}>
-                    Sign Up
-                </Text>
-            </TouchableOpacity>
+            <View style={styles.topView}>
+                <Image 
+                    source={Assets.common.appLogo}
+                    style={styles.logo}
+                />
+                <Text style={styles.aapkaaJyotishTxt}>{Strings.aapkaaJyotish}</Text>
+            </View>
+            <View style={styles.bottomView}>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: 'green',
+        flex:  10,
+        backgroundColor: Colors.primaryColor
+    },
+    topView: {
+        flex:  7,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    bottomView: {
+        flex: 3,
+        backgroundColor: 'white',
+    },
+    aapkaaJyotishTxt: {
+        fontSize: 30,
+        paddingTop: 8
+    },
+    logo: {
+        height: 150,
+        width: 150
     }
 })
 
-//This is mapStateToProps method which get data from Redux store
-const mapStateToProps = (state) => {
-    return state;
-};
-
-
-//This is mapDispatchToProps method which update the store by discpatching action
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setLoginData: (payload) => {
-            dispatch(loginAction(payload));
-        },
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(LoginSignUpScreen);
+export default LoginSignupScreen;

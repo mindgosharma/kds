@@ -5,11 +5,11 @@ import HomeScreen from '../screens/home/HomeScreen';
 import HoroscopeScreen from '../screens/horoscope/HoroscopeScreen';
 import NewsScreen from '../screens/news/NewsScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
-import LoginSignUpScreen from '../screens/loginSignUp/LoginSignUpScreen';
+import LoginSignupScreen from '../screens/loginSignup/LoginSignupScreen';
 
 export {
     SplashScreen,
-    LoginSignUpScreen,
+    LoginSignupScreen,
     LoginScreen,
     SignUpScreen,
     HomeScreen,
