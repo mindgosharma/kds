@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, View } from 'react-native';
-import { Colors } from '../../res/index'
+import { Image, View, Text, StyleSheet } from 'react-native';
+import { Colors, Assets, Strings } from '../../res/index'
 
 const SplashScreen = (props) =>{
     setTimeout(() => {
@@ -8,9 +8,28 @@ const SplashScreen = (props) =>{
       }, 3000)
 
     return(
-        <View style={{backgroundColor: Colors.primaryColor, flex: 1}}>
+        <View style={styles.container}>
+            <Text style={styles.welcomeTxt}>{Strings.welcome}</Text>
+            <Image
+                source={Assets.common.appLogo}
+            />
+             <Text style={styles.welcomeTxt}>{Strings.aapkaaJyotish}</Text>
         </View>
     )
 }
+
+const styles=StyleSheet.create({
+    container: { 
+        flex: 1,
+        backgroundColor: Colors.primaryColor, 
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    welcomeTxt: {
+        fontSize: 30,
+        paddingVertical: 31
+    }
+})
+
 
 export default SplashScreen;
