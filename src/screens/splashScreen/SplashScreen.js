@@ -5,7 +5,7 @@ import { Colors, Assets, Strings } from '../../res/index'
 const SplashScreen = (props) =>{
     setTimeout(() => {
         props.navigation.navigate('LoginSignup')
-      }, 3000)
+      }, 2000)
 
     return(
         <View style={styles.container}>
