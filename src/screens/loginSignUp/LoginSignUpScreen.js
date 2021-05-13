@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet} from  'react-native';
 import { Colors, Assets, Strings } from '../../res/index';
+import { AppButton } from '../../component/index'
 
-const LoginSignupScreen = () => {
+const LoginSignupScreen = (props) => {
     return(
         <View style={styles.container}>
             <View style={styles.topView}>
@@ -13,6 +14,29 @@ const LoginSignupScreen = () => {
                 <Text style={styles.aapkaaJyotishTxt}>{Strings.aapkaaJyotish}</Text>
             </View>
             <View style={styles.bottomView}>
+                <View style={styles.loginButtonContainer}>
+                    <AppButton
+                        onPress={()=>{props.navigation.navigate('Login')}}
+                        title={Strings.login}
+                        titleColor={Colors.white}
+                        titleFontSize={16}
+                        backgroundColor={Colors.secondaryColor}
+                        borderColor={Colors.secondaryColor} 
+                    />
+                </View>
+                <View style={styles.signupButtonContainer}>
+                    <AppButton
+                        onPress={()=>{props.navigation.navigate('Signup')}}
+                        title={Strings.signup}
+                        titleColor={Colors.secondaryColor}
+                        titleFontSize={16}
+                        backgroundColor={Colors.primaryColor}
+                        borderColor={Colors.secondaryColor}
+                    />
+                </View>
+                <Text style={styles.byContinuingPPTNCTxt}>
+                    {Strings.byContinuingPPTNC}
+                </Text>
             </View>
         </View>
     )
@@ -20,7 +44,7 @@ const LoginSignupScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex:  10,
+        flex:  11,
         backgroundColor: Colors.primaryColor
     },
     topView: {
@@ -29,16 +53,26 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     bottomView: {
-        flex: 3,
-        backgroundColor: 'white',
+        flex: 4,
+        paddingHorizontal: 31,
     },
     aapkaaJyotishTxt: {
         fontSize: 30,
-        paddingTop: 8
+        paddingTop: 8,
+        color: Colors.secondaryColor
     },
     logo: {
         height: 150,
         width: 150
+    },
+    signupButtonContainer: {
+        paddingTop: 36,
+        paddingBottom: 56
+    },
+    byContinuingPPTNCTxt: {
+        fontSize: 14,
+        textAlign: 'center',
+        color: Colors.tertiary,
     }
 })
 

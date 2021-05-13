@@ -25,12 +25,12 @@ const MainStackNavigator = () => {
     >
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="LoginSignup" component={LoginSignupScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Signup" component={SignUpScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Horoscope" component={HoroscopeScreen} />
       <Stack.Screen name="News" component={NewsScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="SignUp" component={SignUpScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Profile" component={ProfileScreen} />     
       <Stack.Screen name="AppDrawer" component={DrawerNav} />
     </Stack.Navigator>
   )
