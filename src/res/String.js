@@ -18,4 +18,5 @@ export default {
     termsNConditions: `Terms&Conditions`,
     and: 'and',
     privacyPolicy: 'Privacy Policy',
+    countryCode:'+91 - '
 };

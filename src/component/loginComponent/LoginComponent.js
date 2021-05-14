@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native';
 import {Colors, Assets, Strings} from '../../res/index';
 import {HomeHeader, AppButton} from '../../component/index';
 
@@ -22,7 +28,21 @@ const LoginComponent = props => {
         />
       </View>
       <View style={styles.bodyContainer}>
-        <View style={styles.bodyTopContainer}></View>
+        <View style={styles.bodyTopContainer}>
+          <Text style={styles.loginSignupVia}>
+            {props.backTitle == Strings.login
+              ? Strings.loginViaMobileNo
+              : Strings.signupViaMobileNo}
+          </Text>
+          <View style={styles.textInputContainer}>
+            <TextInput
+              placeholder={Strings.countryCode}
+              placeholderTextColor={Colors.hexaColor}
+              maxLength={10}
+              style={styles.textInput}
+            />
+          </View>
+        </View>
         <View style={styles.bodyBottomContainer}>
           <View style={styles.buttonContainer}>
             <AppButton
@@ -100,7 +120,7 @@ const styles = StyleSheet.create({
   },
   bodyTopContainer: {
     flex: 7,
-    // backgroundColor: 'green',
+    paddingVertical: 30,
   },
   bodyBottomContainer: {
     flex: 4,
@@ -144,6 +164,24 @@ const styles = StyleSheet.create({
     color: Colors.septaColor,
     fontSize: 13,
   },
+  loginSignupVia: {
+    textAlign: 'center',
+    fontSize: 24,
+    color: Colors.hexaColor,
+  },
+  textInputContainer: { 
+    paddingHorizontal: 31,
+    paddingVertical: 68
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: Colors.tertiary,
+    backgroundColor: Colors.white,
+    borderRadius: 5,
+    fontSize: 22,
+    paddingHorizontal: 15,
+    color: Colors.hexaColor,
+  }
 });
 
 export default LoginComponent;
