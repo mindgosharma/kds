@@ -27,7 +27,8 @@ const styles=StyleSheet.create({
     },
     welcomeTxt: {
         fontSize: 30,
-        paddingVertical: 31
+        paddingVertical: 31,
+        color: Colors.secondaryColor
     }
 })
 

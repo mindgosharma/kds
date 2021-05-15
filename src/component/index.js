@@ -5,6 +5,7 @@ import LoginComponent from './loginComponent/LoginComponent';
 import CategoryComponent from './categoryComponent/CategoryComponent'; 
 import BannerComponet from './bannerComponent/BannerComponet'; 
 import AstrologersListComponent from './AstrologersListComponent/AstrologersListComponent'; 
+import TextInputComponent from './textInputComponent/TextInputComponent'; 
 
 export {
     HomeHeader,
@@ -13,5 +14,6 @@ export {
     LoginComponent,
     CategoryComponent,
     BannerComponet,
-    AstrologersListComponent
+    AstrologersListComponent,
+    TextInputComponent
 }

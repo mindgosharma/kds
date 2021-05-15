@@ -7,7 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 import {Colors, Assets, Strings} from '../../res/index';
-import {HomeHeader, AppButton} from '../../component/index';
+import {HomeHeader, AppButton, TextInputComponent} from '../../component/index';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
@@ -39,12 +39,8 @@ const LoginComponent =( props )=> {
               : Strings.signupViaMobileNo}
           </Text>
           <View style={styles.textInputContainer}>
-            <TextInput
-              placeholder={Strings.countryCode}
-              placeholderTextColor={Colors.hexaColor}
-              maxLength={10}
-              style={styles.textInput}
-            />
+              <TextInputComponent
+              />
           </View>
         </View>
         <View style={styles.bodyBottomContainer}>
@@ -174,17 +170,8 @@ const styles = StyleSheet.create({
   },
   textInputContainer: { 
     paddingHorizontal: 31,
-    paddingVertical: 68
+    paddingVertical: 68,
   },
-  textInput: {
-    borderWidth: 1,
-    borderColor: Colors.tertiary,
-    backgroundColor: Colors.white,
-    borderRadius: 5,
-    fontSize: 22,
-    paddingHorizontal: 15,
-    color: Colors.hexaColor,
-  }
 });
 
 export default LoginComponent;
