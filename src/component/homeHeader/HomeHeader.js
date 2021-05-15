@@ -38,6 +38,7 @@ const HomeHeader= (props)=> {
                     <TouchableOpacity 
                         onPress={props.rightFirstOnPress}
                         activeOpacity={1}
+                        style={styles.rightFirstOnPress}
                     >
                         <Image 
                             source={props.rightFirstImage}
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Colors.primaryColor,
         flexDirection: 'row',
-        paddingHorizontal: 18,
+        paddingHorizontal: 8,
         paddingVertical: 26,
         justifyContent: 'space-between',
     },
@@ -64,19 +65,26 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
 
     },
+    leftFirstOnPress: {
+        paddingVertical: 8,
+        paddingHorizontal: 8
+     }   ,
     leftSecondOnPress: {
         paddingLeft: 15,
     },
+    rightFirstOnPress: {
+        paddingVertical: 8,
+        paddingHorizontal: 13
+    },
     rightSecondOnPress: {
-        paddingRight: 27
+        paddingVertical: 8,
+        paddingHorizontal: 13
     },
     leftSecondString: {
         fontSize: 25,
+        color: Colors.secondaryColor
     },
-    leftFirstOnPress: {
-       paddingVertical: 8,
-       paddingHorizontal: 10
-    }   
+  
 
 })
 

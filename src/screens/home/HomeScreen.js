@@ -1,14 +1,23 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { Header } from 'react-native/Libraries/NewAppScreen';
 import { HomeHeader } from '../../component/index';
+import {Colors, Assets, Strings} from '../../res/index';
+
 
 const HomeScreen = (props) => {
 
     return (
         <View style={styles.container}>
              <View style={styles.headerContainer}>
-                 <HomeHeader {...props}/>
+                <HomeHeader
+                    leftFirstImage={Assets.common.more}
+                    leftFirstOnPress={() => props.navigation.goBack()}
+                    leftSecondString={Strings.aapkaaJyotish}
+                    rightSecondImage={Assets.common.wallet}
+                    rightSecondOnPress={()=>alert('Wallet')}
+                    rightFirstImage={Assets.common.notification}
+                    rightFirstOnPress={()=>alert('Notification')}
+                />
              </View>
              <View style={styles.bodyContainer}>
              </View>

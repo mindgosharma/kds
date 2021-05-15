@@ -12,8 +12,10 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 
 const LoginComponent =( props )=> {
+  console.log('Login Component',props)
   const loginCall = () => {
-    props.navigation.navigation('Home')
+    props.navigation.navigate('AppDrawer')
+    console.log('Login Component',props)
   };
 
   const signUpCall = () => {
