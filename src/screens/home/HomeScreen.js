@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, ScrollView, Dimensions } from 'react-native';
-import { HomeHeader, CategoryComponent, BannerComponet } from '../../component/index';
+import { HomeHeader, CategoryComponent, BannerComponet, AstrologersListComponent } from '../../component/index';
 import {Colors, Assets, Strings } from '../../res/index';
 
 const {height, width}=Dimensions.get('window');
@@ -32,6 +32,19 @@ const bannerListData=[
     {},
 ]
 
+const astrologersData=[
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+]
+
 const HomeScreen = (props) => {
 
     return (
@@ -45,20 +58,30 @@ const HomeScreen = (props) => {
                     rightSecondOnPress={()=>alert('Wallet')}
                     rightFirstImage={Assets.common.notification}
                     rightFirstOnPress={()=>alert('Notification')}
+                    {...props}
                 />
              </View>
              <View style={styles.bodyContainer}>
                  <ScrollView
+                    scrollEnabled={false}
                  >  
                      <View style={styles.categoryContainer}>
                          <CategoryComponent
                              categoryData={categoryListData}
+                             {...props}
                          />
                      </View>
                      <View style={styles.bannerContainer}>
                          <BannerComponet
-                            bannerData={bannerListData}
+                             bannerData={bannerListData}
+                             {...props}
                          />
+                     </View>
+                     <View style={styles.astrologersListContainer}>
+                          <AstrologersListComponent
+                              astrologersData={astrologersData}
+                              {...props}
+                          />
                      </View>
                  </ScrollView>
              </View>
@@ -81,8 +104,11 @@ const styles = StyleSheet.create({
          height: height/10
     },
     bannerContainer: { 
-         height: height/4,
-         paddingTop: 25
+         height: height/4.22,
+         paddingTop: 25,
+    },
+    astrologersListContainer: {
+       flex: 10
     }   
 })
 

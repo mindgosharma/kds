@@ -19,4 +19,7 @@ export default {
     and: 'and',
     privacyPolicy: 'Privacy Policy',
     countryCode:'+91 - ',
+    ourAstrologers : 'Our Astrologers',
+    viewAll: 'View All',
+    astrologers: 'Astrologers',
 };

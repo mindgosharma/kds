@@ -15,5 +15,7 @@ export default {
         news: require('./assets/news.png'),
         horoscope: require('./assets/horoscope.png'),
         profile: require('./assets/profile.png'),
+        userProfile: require('./assets/userProfile.png'),
+        call: require('./assets/call.png'),
     }
 }

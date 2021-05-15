@@ -4,6 +4,7 @@ import AppButton from './appButton/AppButton';
 import LoginComponent from './loginComponent/LoginComponent'; 
 import CategoryComponent from './categoryComponent/CategoryComponent'; 
 import BannerComponet from './bannerComponent/BannerComponet'; 
+import AstrologersListComponent from './AstrologersListComponent/AstrologersListComponent'; 
 
 export {
     HomeHeader,
@@ -11,5 +12,6 @@ export {
     AppButton,
     LoginComponent,
     CategoryComponent,
-    BannerComponet
+    BannerComponet,
+    AstrologersListComponent
 }

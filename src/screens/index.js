@@ -6,6 +6,7 @@ import HoroscopeScreen from '../screens/horoscope/HoroscopeScreen';
 import NewsScreen from '../screens/news/NewsScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 import LoginSignupScreen from '../screens/loginSignup/LoginSignupScreen';
+import ViewAllAstrologersScreen from '../screens/viewAllAstrologer/ViewAllAstrologersScreen';
 
 export {
     SplashScreen,
@@ -15,6 +16,7 @@ export {
     HomeScreen,
     HoroscopeScreen,
     NewsScreen,
-    ProfileScreen
+    ProfileScreen,
+    ViewAllAstrologersScreen
 }
 

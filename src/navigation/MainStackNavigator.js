@@ -15,6 +15,7 @@ import {
   HoroscopeScreen,
   NewsScreen,
   ProfileScreen,
+  ViewAllAstrologersScreen
 } from '../screens/index';
 
 //Stack Navigation
@@ -33,6 +34,7 @@ const MainStackNavigator = () => {
       <Stack.Screen name="Horoscope" component={HoroscopeScreen} />
       <Stack.Screen name="News" component={NewsScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="ViewAll" component={ViewAllAstrologersScreen} />
       <Stack.Screen name="AppDrawer" component={DrawerNav} />
     </Stack.Navigator>
   );
