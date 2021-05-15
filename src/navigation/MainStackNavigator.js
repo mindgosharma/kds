@@ -1,9 +1,9 @@
 import React from 'react';
-import { Image } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { SideMenu } from '../component/index';
+import {Image} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {SideMenu} from '../component/index';
 import {Colors, Assets, Strings} from '../res/index';
 
 import {
@@ -14,18 +14,17 @@ import {
   HomeScreen,
   HoroscopeScreen,
   NewsScreen,
-  ProfileScreen
+  ProfileScreen,
 } from '../screens/index';
 
 //Stack Navigation
-const Stack = createStackNavigator()
+const Stack = createStackNavigator();
 const MainStackNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false
-      }}
-    >
+        headerShown: false,
+      }}>
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="LoginSignup" component={LoginSignupScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
@@ -33,93 +32,87 @@ const MainStackNavigator = () => {
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Horoscope" component={HoroscopeScreen} />
       <Stack.Screen name="News" component={NewsScreen} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />     
+      <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="AppDrawer" component={DrawerNav} />
     </Stack.Navigator>
-  )
-}
+  );
+};
 
 //BottomTab Navigation
 const Tab = createBottomTabNavigator();
 const BottomTabsNav = () => {
   return (
-    <Tab.Navigator 
-       tabBarOptions={{
+    <Tab.Navigator
+      tabBarOptions={{
         showLabel: false,
         style: {
-           backgroundColor: Colors.secondaryColor,
-           borderTopRightRadius: 20,
-           borderTopLeftRadius: 20,
-           height: 70
-          },
-      }}
-    >
-      <Tab.Screen 
-           name="Home" 
-           component={HomeScreen}
-           options={{
-             tabBarIcon: ({focused}) => (
-                <Image 
-                   source={Assets.common.home}
-                   style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
-             />
-          ),
-        }}
-       />
-      <Tab.Screen 
-         name="Horoscope"
-         component={HoroscopeScreen} 
-         options={{
+          backgroundColor: Colors.secondaryColor,
+          borderTopRightRadius: 20,
+          borderTopLeftRadius: 20,
+          height: 70,
+        },
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
           tabBarIcon: ({focused}) => (
-            <Image 
-                source={Assets.common.news}
-                style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
+            <Image
+              source={Assets.common.home}
+              style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
             />
           ),
         }}
-        />
-      <Tab.Screen 
-         name="News" 
-         component={NewsScreen}
-         options={{
+      />
+      <Tab.Screen
+        name="Horoscope"
+        component={HoroscopeScreen}
+        options={{
           tabBarIcon: ({focused}) => (
-            <Image 
-                source={Assets.common.horoscope}
-                style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
-
+            <Image
+              source={Assets.common.news}
+              style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
             />
           ),
         }}
-         />
-      <Tab.Screen 
-         name="Profile" 
-         component={ProfileScreen}
-         options={{
+      />
+      <Tab.Screen
+        name="News"
+        component={NewsScreen}
+        options={{
           tabBarIcon: ({focused}) => (
-            <Image 
-                source={Assets.common.profile}
-                style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
+            <Image
+              source={Assets.common.horoscope}
+              style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
             />
           ),
         }}
-       />
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <Image
+              source={Assets.common.profile}
+              style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
-}
+};
 
 //Drawer Navigation
 const Drawer = createDrawerNavigator();
 const DrawerNav = () => {
   return (
-    <Drawer.Navigator drawerContent={(props)=><SideMenu {...props}/>}>
+    <Drawer.Navigator drawerContent={props => <SideMenu {...props} />}>
       <Drawer.Screen name="Home" component={BottomTabsNav} />
       <Drawer.Screen name="Login" component={LoginScreen} />
     </Drawer.Navigator>
   );
-}
+};
 
-export {
-  MainStackNavigator,
-  BottomTabsNav,
-  DrawerNav
-}
+export {MainStackNavigator, BottomTabsNav, DrawerNav};
