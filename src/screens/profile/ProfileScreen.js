@@ -8,7 +8,7 @@ const ProfileScreen = (props) => {
     return (
         <View style={styles.container}>
              <View style={styles.headerContainer}>
-                 <HomeHeader {...props}/>
+                 {/* <HomeHeader {...props}/> */}
              </View>
              <View style={styles.bodyContainer}>
              </View>

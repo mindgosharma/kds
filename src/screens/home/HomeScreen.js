@@ -42,10 +42,12 @@ const HomeScreen = (props) => {
              <View style={styles.bodyContainer}>
                  <ScrollView
                  >  
-                     <View style={{ height: height/10}}>
+                     <View style={styles.categoryContainer}>
                          <CategoryComponent
                              categoryData={categoryListData}
                          />
+                     </View>
+                     <View style={styles.bannerContainer}>
                      </View>
                  </ScrollView>
              </View>
@@ -63,7 +65,15 @@ const styles = StyleSheet.create({
     },
     bodyContainer:{
         flex: 15,
-    }
+    },
+    categoryContainer: {
+         height: height/10
+    },
+    bannerContainer: { 
+         height: 140,
+         backgroundColor: 'green',
+         paddingTop: 20
+    }   
 })
 
 export default HomeScreen;
