@@ -8,10 +8,12 @@ import {
 } from 'react-native';
 import {Colors, Assets, Strings} from '../../res/index';
 import {HomeHeader, AppButton} from '../../component/index';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
-const LoginComponent = props => {
+
+const LoginComponent =( props )=> {
   const loginCall = () => {
-    alert('LoginPressed');
+    props.navigation.navigation('Home')
   };
 
   const signUpCall = () => {
@@ -62,14 +64,13 @@ const LoginComponent = props => {
             </Text>
             <TouchableOpacity
               onPress={() => {
-                [
-                  props.navigation.navigate(
-                    props.backTitle == Strings.login
-                      ? Strings.signup
-                      : Strings.login,
-                  ),
-                ];
-              }}
+                props.navigation.navigate( 
+                  props.backTitle == Strings.login 
+                  ? 
+                  Strings.signup 
+                  : 
+                  Strings.login
+                )}}
               style={styles.loginSignupHereOnPress}>
               <Text style={styles.loginSignupHereTxt}>
                 {props.backTitle == Strings.login
