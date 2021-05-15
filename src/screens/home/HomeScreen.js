@@ -11,7 +11,7 @@ const HomeScreen = (props) => {
              <View style={styles.headerContainer}>
                 <HomeHeader
                     leftFirstImage={Assets.common.more}
-                    leftFirstOnPress={() => props.navigation.goBack()}
+                    leftFirstOnPress={() => props.navigation.open()}
                     leftSecondString={Strings.aapkaaJyotish}
                     rightSecondImage={Assets.common.wallet}
                     rightSecondOnPress={()=>alert('Wallet')}
@@ -28,6 +28,7 @@ const HomeScreen = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 10,
+        backgroundColor: Colors.primaryColor
     },
     headerContainer:{
         flex: 1

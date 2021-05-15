@@ -1,8 +1,11 @@
 import React from 'react';
+import { Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { SideMenu } from '../component/index';
+import {Colors, Assets, Strings} from '../res/index';
+
 import {
   SplashScreen,
   LoginSignupScreen,
@@ -40,11 +43,66 @@ const MainStackNavigator = () => {
 const Tab = createBottomTabNavigator();
 const BottomTabsNav = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Horoscope" component={HoroscopeScreen} />
-      <Tab.Screen name="News" component={NewsScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+    <Tab.Navigator 
+       tabBarOptions={{
+        showLabel: false,
+        style: {
+           backgroundColor: Colors.secondaryColor,
+           borderTopRightRadius: 20,
+           borderTopLeftRadius: 20,
+           height: 70
+          },
+      }}
+    >
+      <Tab.Screen 
+           name="Home" 
+           component={HomeScreen}
+           options={{
+             tabBarIcon: ({focused}) => (
+                <Image 
+                   source={Assets.common.home}
+                   style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
+             />
+          ),
+        }}
+       />
+      <Tab.Screen 
+         name="Horoscope"
+         component={HoroscopeScreen} 
+         options={{
+          tabBarIcon: ({focused}) => (
+            <Image 
+                source={Assets.common.news}
+                style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
+            />
+          ),
+        }}
+        />
+      <Tab.Screen 
+         name="News" 
+         component={NewsScreen}
+         options={{
+          tabBarIcon: ({focused}) => (
+            <Image 
+                source={Assets.common.horoscope}
+                style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
+
+            />
+          ),
+        }}
+         />
+      <Tab.Screen 
+         name="Profile" 
+         component={ProfileScreen}
+         options={{
+          tabBarIcon: ({focused}) => (
+            <Image 
+                source={Assets.common.profile}
+                style={{tintColor: focused ? Colors.primaryColor : Colors.white}}
+            />
+          ),
+        }}
+       />
     </Tab.Navigator>
   );
 }
