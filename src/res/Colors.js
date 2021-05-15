@@ -11,7 +11,7 @@ export default {
     pentaColor: '#FAF7E0',
     hexaColor: '#515151',
     septaColor: '#3300FF',
-    // octaColor: '#9DC0DF',
+    octaColor: '#671167',
     // nonaColor: '#3D9B3A',
     // decaColor: '#E4575B',
     white: '#FFFFFF',

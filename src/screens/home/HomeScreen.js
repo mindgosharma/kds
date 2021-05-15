@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text, ScrollView, Dimensions } from 'react-native';
-import { HomeHeader, CategoryComponent } from '../../component/index';
+import { HomeHeader, CategoryComponent, BannerComponet } from '../../component/index';
 import {Colors, Assets, Strings } from '../../res/index';
 
 const {height, width}=Dimensions.get('window');
@@ -22,6 +22,12 @@ const categoryListData=[
         title:  'Numerlogy',
         icon: ''
     }
+]
+
+const bannerListData=[
+    {},
+    {},
+    {}
 ]
 
 const HomeScreen = (props) => {
@@ -48,6 +54,9 @@ const HomeScreen = (props) => {
                          />
                      </View>
                      <View style={styles.bannerContainer}>
+                         <BannerComponet
+                            bannerData={bannerListData}
+                         />
                      </View>
                  </ScrollView>
              </View>
@@ -70,9 +79,9 @@ const styles = StyleSheet.create({
          height: height/10
     },
     bannerContainer: { 
-         height: 140,
-         backgroundColor: 'green',
-         paddingTop: 20
+         height: height/4,
+        //  backgroundColor: 'green',
+         paddingVertical: 25
     }   
 })
 
