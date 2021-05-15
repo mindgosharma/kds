@@ -7,6 +7,8 @@ const {height, width}=Dimensions.get('window')
 
 const BannerComponent = (props) => {
 
+    const [current_page, setSurrent_page]=React.useState(0)
+
      const renderBanner=(item,index)=>{
          return(
              <View style={styles.bannerContainer}>
@@ -24,23 +26,23 @@ const BannerComponent = (props) => {
                   horizontal={true}
                   showsHorizontalScrollIndicator={false}
               />
-             <View style={{position: 'absolute'}}>
-             {/* <PageControl
+             <View style={{position: 'absolute', left: 20}}>
+             <PageControl
               style={{ height: 50 }}
               numberOfPages={props.bannerData.length}
-              currentPage={0}
+              currentPage={current_page}
               hidesForSinglePage={false}
-              pageIndicatorTintColor={'white'}
-              currentPageIndicatorTintColor={'green'}
+              pageIndicatorTintColor={Colors.tertiary}
+              currentPageIndicatorTintColor={Colors.nonaColor}
               indicatorStyle={{
                 borderRadius: 7,
-                backgroundColor: 'white',
+                backgroundColor: Colors.tertiary,
                 borderWidth: 3,
-                borderColor: "rgba(230, 230, 230, 1)"
+                borderColor: Colors.tertiary
               }}
-              currentIndicatorStyle={{ borderRadius: 8, height: 16, width: 16 }}
-              indicatorSize={{ width: 14, height: 14 }}
-            /> */}
+              currentIndicatorStyle={{ borderRadius: 5, height: 10, width: 10 }}
+              indicatorSize={{ width: 10, height: 10 }}
+            />
              </View>
          </View>
     )
@@ -52,7 +54,7 @@ const styles=StyleSheet.create({
     },
     bannerContainer: {
         backgroundColor: Colors.octaColor,
-        height: height/5,
+        height: height/5.72,
         width: width/1.12,
         marginLeft: 10,
         marginRight: 8,

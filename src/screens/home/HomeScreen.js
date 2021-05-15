@@ -27,7 +27,9 @@ const categoryListData=[
 const bannerListData=[
     {},
     {},
-    {}
+    {},
+    {},
+    {},
 ]
 
 const HomeScreen = (props) => {
@@ -80,8 +82,7 @@ const styles = StyleSheet.create({
     },
     bannerContainer: { 
          height: height/4,
-        //  backgroundColor: 'green',
-         paddingVertical: 25
+         paddingTop: 25
     }   
 })
 
