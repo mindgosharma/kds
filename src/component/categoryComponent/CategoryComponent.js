@@ -23,6 +23,7 @@ const CategoryComponent = (props) => {
                 <FlatList
                      data={props.categoryData}
                      renderItem={({item,index})=>renderCategory(item,index)}
+                     keyExtractor={(item, index) => index.toString()}
                      horizontal={true}
                      showsHorizontalScrollIndicator={false}
 

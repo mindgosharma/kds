@@ -23,6 +23,7 @@ const BannerComponent = (props) => {
               <FlatList
                   data={props.bannerData}
                   renderItem={({item,index})=>renderBanner(item,index)}
+                  keyExtractor={(item, index) => index.toString()}
                   horizontal={true}
                   showsHorizontalScrollIndicator={false}
               />

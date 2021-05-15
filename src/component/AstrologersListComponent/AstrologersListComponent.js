@@ -88,6 +88,7 @@ const AstrologersListComponent = (props) =>{
                  data={props.astrologersData}
                  contentContainerStyle={{flex: 1}}
                  renderItem={({item, index})=>renderUsers(item, index)}
+                 keyExtractor={(item, index) => index.toString()}
             />
          </View>
     )

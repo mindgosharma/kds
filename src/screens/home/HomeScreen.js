@@ -63,7 +63,6 @@ const HomeScreen = (props) => {
              </View>
              <View style={styles.bodyContainer}>
                  <ScrollView
-                    scrollEnabled={false}
                  >  
                      <View style={styles.categoryContainer}>
                          <CategoryComponent
