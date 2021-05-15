@@ -1,8 +1,28 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { HomeHeader } from '../../component/index';
-import {Colors, Assets, Strings} from '../../res/index';
+import { View, StyleSheet, Text, ScrollView, Dimensions } from 'react-native';
+import { HomeHeader, CategoryComponent } from '../../component/index';
+import {Colors, Assets, Strings } from '../../res/index';
 
+const {height, width}=Dimensions.get('window');
+
+const categoryListData=[
+    {
+        title:  'All',
+        icon: ''
+    },
+    {
+        title:  'Vedic',
+        icon: ''
+    },
+    {
+        title:  'Tarot',
+        icon: ''
+    },
+    {
+        title:  'Numerlogy',
+        icon: ''
+    }
+]
 
 const HomeScreen = (props) => {
 
@@ -11,7 +31,7 @@ const HomeScreen = (props) => {
              <View style={styles.headerContainer}>
                 <HomeHeader
                     leftFirstImage={Assets.common.more}
-                    leftFirstOnPress={() => props.navigation.open()}
+                    leftFirstOnPress={() => props.navigation.openDrawer()}
                     leftSecondString={Strings.aapkaaJyotish}
                     rightSecondImage={Assets.common.wallet}
                     rightSecondOnPress={()=>alert('Wallet')}
@@ -20,6 +40,14 @@ const HomeScreen = (props) => {
                 />
              </View>
              <View style={styles.bodyContainer}>
+                 <ScrollView
+                 >  
+                     <View style={{ height: height/10}}>
+                         <CategoryComponent
+                             categoryData={categoryListData}
+                         />
+                     </View>
+                 </ScrollView>
              </View>
         </View>
     )
@@ -27,14 +55,14 @@ const HomeScreen = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 10,
+        flex: 17,
         backgroundColor: Colors.primaryColor
     },
     headerContainer:{
-        flex: 1
+        flex: 2
     },
     bodyContainer:{
-        flex: 8
+        flex: 15,
     }
 })
 

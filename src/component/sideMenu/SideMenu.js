@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import {View, StyleSheet } from 'react-native';
+import {Colors} from '../../res/index';
 
 const SideMenu = () => {
     return (
@@ -11,7 +12,7 @@ const SideMenu = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'green'
+        backgroundColor: Colors.white
     }
 })
 

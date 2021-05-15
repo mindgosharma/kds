@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {SideMenu} from '../component/index';
-import {Colors, Assets, Strings} from '../res/index';
+import {Colors, Assets} from '../res/index';
 
 import {
   SplashScreen,
