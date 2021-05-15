@@ -28,7 +28,7 @@ const BannerComponent = (props) => {
                   showsHorizontalScrollIndicator={false}
               />
              <View style={{position: 'absolute', left: 20}}>
-             <PageControl
+             {/* <PageControl
               style={{ height: 50 }}
               numberOfPages={props.bannerData.length}
               currentPage={current_page}
@@ -43,7 +43,7 @@ const BannerComponent = (props) => {
               }}
               currentIndicatorStyle={{ borderRadius: 5, height: 10, width: 10 }}
               indicatorSize={{ width: 10, height: 10 }}
-            />
+            /> */}
              </View>
          </View>
     )
