@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
          paddingTop: 25,
     },
     astrologersListContainer: {
-       flex: 10
     }   
 })
 
