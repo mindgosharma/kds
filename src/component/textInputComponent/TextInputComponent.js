@@ -2,7 +2,7 @@ import React from 'react';
 import {TextInput, View, StyleSheet, Text} from 'react-native';
 import {Colors, Assets, Strings} from '../../res/index';
 
-const TextInputComponent = () => {
+const TextInputComponent = (props) => {
 
     return(
          <View style={styles.textInputContainer}>
@@ -12,6 +12,7 @@ const TextInputComponent = () => {
              <TextInput
                 style={styles.textInput}
                 maxLength={10}
+                {...props}
              />
          </View>
     )

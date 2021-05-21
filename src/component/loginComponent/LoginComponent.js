@@ -12,10 +12,15 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 
 const LoginComponent =( props )=> {
-  console.log('Login Component',props)
+
+  const [mobileNumber, setMobileNumber]=React.useState('')
+
   const loginCall = () => {
-    props.navigation.navigate('AppDrawer')
-    console.log('Login Component',props)
+      if(mobileNumber.length===10){
+         props.navigation.navigate('AppDrawer')
+      }else{
+        alert('Enter valid number')
+      }
   };
 
   const signUpCall = () => {
@@ -40,6 +45,7 @@ const LoginComponent =( props )=> {
           </Text>
           <View style={styles.textInputContainer}>
               <TextInputComponent
+                 onChangeText={(text)=>setMobileNumber(text)}
               />
           </View>
         </View>

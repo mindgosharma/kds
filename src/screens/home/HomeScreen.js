@@ -55,9 +55,9 @@ const HomeScreen = (props) => {
                     leftFirstOnPress={() => props.navigation.openDrawer()}
                     leftSecondString={Strings.aapkaaJyotish}
                     rightSecondImage={Assets.common.wallet}
-                    rightSecondOnPress={()=>alert('Wallet')}
+                    rightSecondOnPress={()=>alert(Strings.underDevelopment)}
                     rightFirstImage={Assets.common.notification}
-                    rightFirstOnPress={()=>alert('Notification')}
+                    rightFirstOnPress={()=>alert(Strings.underDevelopment)}
                     {...props}
                 />
              </View>

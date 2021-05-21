@@ -114,7 +114,6 @@
 				C4431D6134E54C0A48A7010C /* Pods-Aapkajyotish-AapkajyotishTests.debug.xcconfig */,
 				2113720F4C06C82031EC3B4A /* Pods-Aapkajyotish-AapkajyotishTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

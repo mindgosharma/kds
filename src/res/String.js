@@ -22,4 +22,5 @@ export default {
     ourAstrologers : 'Our Astrologers',
     viewAll: 'View All',
     astrologers: 'Astrologers',
+    underDevelopment: 'Under Development'
 };
