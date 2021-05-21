@@ -9,7 +9,7 @@ import {Colors, Assets} from '../res/index';
 import {
   SplashScreen,
   LoginSignupScreen,
-  SignUpScreen,
+  SignupScreen,
   LoginScreen,
   HomeScreen,
   HoroscopeScreen,
@@ -29,7 +29,7 @@ const MainStackNavigator = () => {
       <Stack.Screen name="Splash" component={SplashScreen} />
       <Stack.Screen name="LoginSignup" component={LoginSignupScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Signup" component={SignUpScreen} />
+      <Stack.Screen name="Signup" component={SignupScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Horoscope" component={HoroscopeScreen} />
       <Stack.Screen name="News" component={NewsScreen} />

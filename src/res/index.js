@@ -3,7 +3,7 @@ import Colors from '../res/Colors';
 import Constants from '../res/Constants';
 import Strings from '../res/String';
 import URL from '../res/URL';
-// import Styles from "../res/Styles";
+import GlobalStyle from "../res/GlobalStyle";
 import AsyncStorageValues from "../res/AsyncStorageValues";
 
 
@@ -14,6 +14,6 @@ export {
     Constants,
     Strings,
     URL,
-    // Styles,
+    GlobalStyle,
     AsyncStorageValues
 }

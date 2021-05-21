@@ -8,7 +8,7 @@ import { LoginComponent } from '../../component/index';
 import { fetchRequest, fetchMultiPartRequest } from '../../utils/NetworkManager';
 
 
-const SignUpScreen = (props) => {
+const SignupScreen = (props) => {
 
     React.useEffect(() => {
         callApiTest()
@@ -50,4 +50,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(SignupScreen);

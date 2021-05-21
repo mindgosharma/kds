@@ -1,50 +1,87 @@
 import React from 'react';
-import {View, StyleSheet, FlatList, Dimensions, Text} from 'react-native';
-import {Colors} from '../../res/index';
-import PageControl from "react-native-page-control";
+import {View, StyleSheet, Dimensions, Text, Animated} from 'react-native';
+import {Colors, GlobalStyle} from '../../res/index';
 
 const {height, width}=Dimensions.get('window')
 
 const BannerComponent = (props) => {
 
-    const [current_page, setSurrent_page]=React.useState(0)
+     const scrollX = new Animated.Value(0);
 
-     const renderBanner=(item,index)=>{
+    const renderOnBoardingContent = () => {
+        
          return(
-             <View style={styles.bannerContainer}>
-                 <Text>
-                 </Text>
+             <Animated.ScrollView
+                 horizontal={true}
+                 pagingEnabled={true}
+                 scrollEnabled={true}
+                 snapToAlignment={'center'}
+                 showsHorizontalScrollIndicator={false}
+                 decelerationRate={0}
+                 scrollEventThrottle={16}
+                 onScroll={Animated.event([
+                    {nativeEvent:{contentOffset:{x: scrollX}}}
+                ],{useNativeDriver: false})}
+             >
+                 {
+                     props.bannerData.map((item, index)=>(
+                        <View 
+                            key={index} 
+                            style={styles.bannerContainer}
+                        > 
+                        </View>
+                    ))
+                 }
+             </Animated.ScrollView>
+         )   
+
+    }
+
+    const renderDots = () => {
+
+         const dotsPosition = Animated.divide(scrollX, GlobalStyle.size.width)
+
+         return(
+             <View
+                 style={styles.dotsContainer}
+             >
+                  {
+                     props.bannerData.map((item, index)=>{
+                           const opacity = dotsPosition.interpolate({
+                               inputRange: [index-1, index, index+1],
+                               outputRange: [0.3, 1, 0.3],
+                               extrapolate: "clamp"
+                           })
+
+                           const dotSize = dotsPosition.interpolate({
+                               inputRange: [index-1, index, index+1],
+                               outputRange: [12, 12, 12],
+                               extrapolate: "clamp"
+                           })
+                           return(
+                                <Animated.View
+                                     key={`dot-${index}`}
+                                     opacity={opacity}
+                                     style={[styles.dot, {width: dotSize, height: dotSize}]}
+                                >
+                                </Animated.View>
+                           )
+                      })
+                  }
              </View>
          )
-     }
+
+    }
+
 
     return(
          <View styles={styles.container}>
-              <FlatList
-                  data={props.bannerData}
-                  renderItem={({item,index})=>renderBanner(item,index)}
-                  keyExtractor={(item, index) => index.toString()}
-                  horizontal={true}
-                  showsHorizontalScrollIndicator={false}
-              />
-             <View style={{position: 'absolute', left: 20}}>
-             {/* <PageControl
-              style={{ height: 50 }}
-              numberOfPages={props.bannerData.length}
-              currentPage={current_page}
-              hidesForSinglePage={false}
-              pageIndicatorTintColor={Colors.tertiary}
-              currentPageIndicatorTintColor={Colors.nonaColor}
-              indicatorStyle={{
-                borderRadius: 7,
-                backgroundColor: Colors.tertiary,
-                borderWidth: 3,
-                borderColor: Colors.tertiary
-              }}
-              currentIndicatorStyle={{ borderRadius: 5, height: 10, width: 10 }}
-              indicatorSize={{ width: 10, height: 10 }}
-            /> */}
-             </View>
+              <View>
+                  {renderOnBoardingContent()}
+              </View>
+              <View style={styles.rootDotsContainer}>
+                  {renderDots()}
+              </View>
          </View>
     )
 }
@@ -58,8 +95,29 @@ const styles=StyleSheet.create({
         height: height/5.72,
         width: width/1.12,
         marginLeft: 10,
-        marginRight: 8,
+        marginRight: 5,
         borderRadius: 5
+    },
+    rootDotsContainer: { 
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        bottom: 0,
+        alignItems: 'center',
+        paddingVertical: 10
+    },
+    dotsContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    dot: {
+        height: 12,
+        width: 12,
+        borderRadius: 6,
+        backgroundColor: Colors.white,
+        borderColor:  Colors.white,
+        borderWidth: 1,
+        marginHorizontal: 5,
     }
 
 })
