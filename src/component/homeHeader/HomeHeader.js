@@ -55,25 +55,26 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.primaryColor,
         flexDirection: 'row',
         paddingHorizontal: 8,
-        paddingVertical: 26,
+        alignItems: 'center',
         justifyContent: 'space-between',
     },
     leftContainer: {
         flexDirection: 'row',
+        justifyContent: 'center'
     },
     rightContainer: {
         flexDirection: 'row',
 
     },
     leftFirstOnPress: {
-        paddingVertical: 8,
+        paddingVertical: 7,
         paddingHorizontal: 8
      }   ,
     leftSecondOnPress: {
         paddingLeft: 15,
     },
     rightFirstOnPress: {
-        paddingVertical: 8,
+        paddingVertical: 6,
         paddingHorizontal: 13
     },
     rightSecondOnPress: {

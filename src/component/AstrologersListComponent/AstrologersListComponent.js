@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Text, TouchableOpacity, FlatList, Image} from 'react-native';
-import { Strings, Colors, Assets } from '../../res';
+import { Strings, Colors, Assets, GlobalStyle } from '../../res';
 
 const AstrologersListComponent = (props) =>{
 
@@ -59,7 +59,7 @@ const AstrologersListComponent = (props) =>{
                          </View>
                      </View>
                      <View style={styles.iconContainer}>
-                         <TouchableOpacity style={{height: 60, width: 60, borderRadius: 30, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center'}}>
+                         <TouchableOpacity style={{height: GlobalStyle.size.width / 7 , width:  GlobalStyle.size.width / 7, borderRadius: GlobalStyle.size.width / 14, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center'}}>
                               <Image
                                  source={Assets.common.call}
                               />
@@ -132,14 +132,11 @@ const styles=StyleSheet.create({
          paddingHorizontal: 12
      },
      imageContainer: {
-         backgroundColor: 'green',
-         width: 115,
-         height: 115,
          borderRadius: 10
      },
      userProfile: {
-         width: 115,
-         height: 115,
+         width: GlobalStyle.size.width / 4,
+         height: GlobalStyle.size.width / 4,
      },
      descreptionContainer: {
          paddingHorizontal: 10
