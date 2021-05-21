@@ -49,13 +49,13 @@ const sideMenuData=[
     },
 ]
 
-const SideMenu = () => {
+const SideMenu = (props) => {
 
      const renderSideDrawerContent = (item, index) => {
          return(
              <View style={{paddingTop: 5, paddingLeft: 75}}>
                  <TouchableOpacity
-                    onPress={()=>alert(Strings.underDevelopment)}
+                    onPress={()=> item.title=='Logout' ? props.navigation.navigate('LoginSignup') : alert(Strings.underDevelopment)}
                     style={{paddingVertical: 10}}
                  >
                      <Text style={{fontSize: 16, color: Colors.hexaColor}}>

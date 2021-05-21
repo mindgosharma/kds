@@ -5,7 +5,7 @@ const AppButton = (props) => {
     return (
         <TouchableOpacity 
             {...props}
-            activeOpacity={1}
+            activeOpacity={.6}
             style={{
                 height: 50,
                 backgroundColor: props.backgroundColor,
