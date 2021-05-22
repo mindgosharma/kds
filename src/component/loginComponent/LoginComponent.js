@@ -143,7 +143,8 @@ const styles = StyleSheet.create({
   },
   donotHaveAccountContainer: {
     flexDirection: 'row',
-    padding: 44,
+    paddingHorizontal: 44,
+    paddingVertical: 25,
   },
   loginSignupHereOnPress: {
     paddingLeft: 10,
