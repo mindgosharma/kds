@@ -4,7 +4,6 @@ import Constants from '../res/Constants';
 import Strings from '../res/String';
 import URL from '../res/URL';
 import GlobalStyle from "../res/GlobalStyle";
-import AsyncStorageValues from "../res/AsyncStorageValues";
 
 
 // Exorting all the resources from index To keep track of all the resource files
@@ -15,5 +14,4 @@ export {
     Strings,
     URL,
     GlobalStyle,
-    AsyncStorageValues
 }

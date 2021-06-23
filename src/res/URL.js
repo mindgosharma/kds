@@ -1,96 +1,57 @@
 /**
- * 
- * URL which will be used for API calling should be declared in this file.
- */
+* @description:This is Assets file
+* @author:Vibhishan
+* @created_on:18/05/2021
+* @param:
+* @return:
+* @modified_by:Vibhishan
+* @modified_on:29/05/2021
+*/
 
 export const AppInfo = {
-    // baseUrlAPI: 'https://cigapi.affleprojects.com',
-    // apiVersion: 'v1',
-    // serviceTimeOut: 20000,
-    // baseUrlAPI: 'http://fundauat.affleprojects.com', :- Uat Server
-    // baseUrlAPI: 'http://35.247.132.150:3008',       :- Dev Server
-
-    // baseUrlAPI: 'http://35.247.132.150:3008',
-    baseUrlAPI: 'http://fundauat.affleprojects.com',
-    apiVersion: 'v1',
-    serviceTimeOut: 20000,
+     //Stage
+     //baseUrlAPI: 'http://dev.wealthconcert.demo2projects.com/', 
+     //Dev
+     baseUrlAPI: 'http://dev.wealthconcert.demo2projects.com',
+     apiVersion: 'v1',
+     serviceTimeOut: 20000,
+    
 };
 
 export default {
-    getRequest: 'GET',
-    postRequest: 'POST',
-    deleteRequest: 'DELETE',
-    putRequest: 'PUT',
-    baseURL: AppInfo.baseUrlAPI + "/" + AppInfo.apiVersion + "/",
 
-    dummy_api: 'https://jsonplaceholder.typicode.com/posts',
-    verifyOtp: 'common/verifyOTP',
-    countryCode: 'common/getCountryCode',
-    login: 'common/login',
-    socialMediaLogin: 'common/socialMediaLogin',
-    updateStudent: 'student/updateStudent',
-    updateTutor: 'tutor/updateTutor',
-    getEducationDetails: 'common/getEducationDetails',
-    bookSession: 'student/bookSession',
-    cancelSession: 'student/cancelSession',
-    customerQuery: 'common/customerQuery',
-    bookSession: 'student/bookSession',
-    rescheduleSession: 'student/rescheduleSession',
-    tutorRescheduleSession: 'tutor/rescheduleTutorSession',
-    homeScreen: 'student/getSessionsHome',
-    sessionDetail: 'student/getSessionDetail',
-    getSessions: 'student/getSessions',
-    startSession: 'student/startSession',
-    bidList: 'student/getBidsList',
-    rateTutor: 'tutor/rateTutor',
-    getBiddingPrice: 'tutor​/getBiddingPrice',
-    updateBid: 'student/updateBid',
-    getPages: 'common/getPages',
-    getTutorList: 'student/myTutorListing',
-    getTutorHome: "tutor/getTutorSessionsHome",
-    rateTutor: 'tutor/rateTutor',
-    getBiddingPrice: 'tutor​/getBiddingPrice',
-    getTutorSubjects: 'tutor/getTutorSubjects',
-    newlyAddedSession: 'tutor/newlyAddedSession',
-    tutorFilterSession: 'tutor/filterSession',
-    studentGetSubjects: 'student/getStudentSubjects',
-    getStudentSessions: 'student/getMySessions',
-    rateTutor: 'tutor/rateTutor',
-    getTutorHome: 'tutor/getTutorSessionsHome',
-    placeBid: 'tutor/placeBid',
-    tutorManageSession: 'tutor/manageSession',
-    getAllScheduledSessions: 'tutor/getAllScheduledSession',
-    newlyAddedSessionDetail: 'tutor/getnewlyAddedSessionDetail',
-    getTutorSessionDetail: 'tutor/getTutorSessionDetail',
-    tutoFilterSession: 'tutor/filterSession',
-    getAllTutorSubjects: 'tutor/getTutorSubjects',
-    filterNewlyAddedSession: 'tutor/filterNewlySession',
-    getStudentSessions: 'student/getMySessions',
-    tutorRescheduleSession: 'tutor/rescheduleTutorSession',
-    videoCallSessionStart: 'common/createSessionAndSendNotification',
-    cancelTutorSession: 'tutor/cancelTutorSession',
-    verifyRefferalCode: 'student/verifyReferralID',
-    verifyTutorReferal: 'tutor/verifyTutorReferralID',
-    completeSession: 'common/completeSession',
-    rateTutor: 'tutor/rateTutor',
-    raiseDisputeStudent: 'student/raiseDesputeStudent',
-    rateStudent: 'student/rateStudent',
-    getTutorProfile: 'student/getTutorProfile',
-    getDisputeList: 'common/getDisputeList',
-    raiseDisputeTutor: 'tutor/raiseDesputeTutor',
-    tutorVerifyCharges: 'tutor/tutorVerifyCharges',
-    studentVerifyCharges: 'student/studentVerifyCharges',
-    myClass: 'student/myClasses',
-    logout: 'common/logout',
-    checkPreviousSessionRated: 'student/checkPreviousSessionRatedS',
-    checkPreviousSessionRatedTutor: 'tutor/checkPreviousSessionRated',
-    listNotifications: 'common/notificationList',
-    readNotification: 'common/updateNotification',
-    appleLogin: 'common/appleLogin',
-    paymentSummary: 'student/paymentSummary',
-    createPaymentToken: 'student/createPaymentToken',
-    verifyPayment: 'student/verifyPaymentToken',
-    setSessionStatusAfterFailure: 'student/updateSessionOnPaymentFailure',
-    payementDPO_URL: 'https://secure.3gdirectpay.com/payv2.php?ID=',
-    // payementDPO_URL: 'https://secure1.sandbox.directpay.online/payv2.php?ID='
+       baseURL: AppInfo.baseUrlAPI + "/" + "api/",
+
+       REQUEST_TYPE: {
+           getRequest: 'GET',
+           postRequest: 'POST',
+           deleteRequest: 'DELETE',
+           putRequest: 'PUT',
+           multipart: "mutipart",
+       },
+       END_POINT: {
+           register: 'register',
+           login: 'login',
+           logout: 'logout',
+           verify_email: 'verify_email',
+           send_otp: 'send_otp',
+           forgot_password : 'forgot_password',
+           reset_password: 'reset_password',
+           profile: 'profile',
+           update_profile: 'update_profile',
+           change_mobile : 'change_mobile',
+           update_mobile: 'update_mobile',
+           change_email: 'change_email',
+           update_email: 'update_email',
+           send_otp_mobile: 'send_otp_mobile',
+           verify_mobile: 'verify_mobile',
+           verify_password: 'verify_password',
+           change_password: 'change_password',
+           contact_us: 'contact_us',
+           staticpageAbout: 'staticpages/about',
+           staticpagesPrivacyPolicy: 'staticpages/privacy-policy',
+           staticpagesTermsOfUse: 'staticpages/terms-of-use',
+           group: 'group',
+           user_groups: 'user-groups',
+      }
 }

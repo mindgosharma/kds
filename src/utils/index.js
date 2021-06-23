@@ -1,7 +1,7 @@
-import NetworkManager from './NetworkManager'
-import Utility from './Utility'
-import NavUtil from "./NavUtil";
+import NetworkManager from '../utils/NetworkManager';
+import Utility from '../utils/Utility';
 
 export {
-    NetworkManager, Utility, NavUtil
+
+      NetworkManager, Utility    
 }
