@@ -34,12 +34,13 @@ const CategoryComponent = (props) => {
 
 const styles=StyleSheet.create({
     container: {
-        flex: 1
+        flex: 0,
+        paddingVertical: 15
+
     },
     categoryOnPress: {
          paddingHorizontal: 20,
-         justifyContent: 'center',
-          alignItems: 'center'
+         alignItems: 'center'
     },
     categoryCircle: { 
          height: height/15,

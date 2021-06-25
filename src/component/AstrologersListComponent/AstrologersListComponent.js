@@ -102,7 +102,8 @@ const styles=StyleSheet.create({
          flexDirection: 'row',
          justifyContent: 'space-between',
           paddingHorizontal: 10,
-          alignItems: 'center'
+          alignItems: 'center',
+          paddingTop: 12
      },
      viewAllTxt: {
          fontSize: 16,
@@ -122,7 +123,6 @@ const styles=StyleSheet.create({
         flex: 1
      },
      usersCardContainer: {
-         height: 150,
          backgroundColor: Colors.white,
          marginVertical: 10,
          marginHorizontal: 10,

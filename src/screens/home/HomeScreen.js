@@ -1,49 +1,7 @@
 import React from 'react';
-import { View, StyleSheet, Text, ScrollView, Dimensions } from 'react-native';
-import { HomeHeader, CategoryComponent, BannerComponet, AstrologersListComponent } from '../../component/index';
+import {View, StyleSheet} from 'react-native';
+import {HomeHeader, CategoryComponent, BannerComponet, AstrologersListComponent} from '../../component/index';
 import {Colors, Assets, Strings } from '../../res/index';
-
-const {height, width}=Dimensions.get('window');
-
-const categoryListData=[
-    {
-        title:  'All',
-        icon: ''
-    },
-    {
-        title:  'Vedic',
-        icon: ''
-    },
-    {
-        title:  'Tarot',
-        icon: ''
-    },
-    {
-        title:  'Numerlogy',
-        icon: ''
-    }
-]
-
-const bannerListData=[
-    {},
-    {},
-    {},
-    {},
-    {},
-]
-
-const astrologersData=[
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-]
 
 const HomeScreen = (props) => {
 
@@ -62,52 +20,34 @@ const HomeScreen = (props) => {
                 />
              </View>
              <View style={styles.bodyContainer}>
-                 <ScrollView
-                 >  
-                     <View style={styles.categoryContainer}>
-                         <CategoryComponent
-                             categoryData={categoryListData}
-                             {...props}
-                         />
-                     </View>
-                     <View style={styles.bannerContainer}>
-                         <BannerComponet
-                             bannerData={bannerListData}
-                             {...props}
-                         />
-                     </View>
-                     <View style={styles.astrologersListContainer}>
-                          <AstrologersListComponent
-                              astrologersData={astrologersData}
-                              {...props}
-                          />
-                     </View>
-                 </ScrollView>
-             </View>
+                <CategoryComponent
+                    categoryData={Strings.categoryListData}
+                    {...props}
+                />
+                <BannerComponet
+                    bannerData={Strings.bannerListData}
+                    {...props}
+                />
+                <AstrologersListComponent
+                    astrologersData={Strings.astrologeastrologersData}
+                    {...props}
+                />
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 17,
+        flex: 10,
         backgroundColor: Colors.primaryColor
     },
     headerContainer:{
-        flex: 2
+        flex: 1,
     },
     bodyContainer:{
-        flex: 15,
+        flex: 9,
     },
-    categoryContainer: {
-         height: height/10
-    },
-    bannerContainer: { 
-         height: height/4.22,
-         paddingTop: 25,
-    },
-    astrologersListContainer: {
-    }   
 })
 
 export default HomeScreen;

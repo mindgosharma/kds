@@ -76,12 +76,10 @@ const BannerComponent = (props) => {
 
     return(
          <View styles={styles.container}>
-              <View>
-                  {renderOnBoardingContent()}
-              </View>
-              <View style={styles.rootDotsContainer}>
-                  {renderDots()}
-              </View>
+             {renderOnBoardingContent()}
+            <View style={styles.rootDotsContainer}>
+                {renderDots()}
+            </View>
          </View>
     )
 }

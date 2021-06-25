@@ -22,5 +22,54 @@ export default {
     ourAstrologers : 'Our Astrologers',
     viewAll: 'View All',
     astrologers: 'Astrologers',
-    underDevelopment: 'Under Development'
+    underDevelopment: 'Under Development',
+    categoryListData:[
+      {
+          title:  'All',
+          icon: ''
+      },
+      {
+          title:  'Vedic',
+          icon: ''
+      },
+      {
+          title:  'Tarot',
+          icon: ''
+      },
+      {
+          title:  'Numerlogy',
+          icon: ''
+      }
+  ],
+  astrologeastrologersData:[
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+  bannerListData:[
+    {},
+    {},
+    {},
+    {},
+    {},
+  ],
+  astrologersData:[
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+]
 };
