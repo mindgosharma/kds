@@ -43,8 +43,32 @@ const LoginComponent =( props )=> {
               ? Strings.loginViaMobileNo
               : Strings.signupViaMobileNo}
           </Text>
+          {props.isFromSingup&&<>
           <View style={styles.textInputContainer}>
               <TextInputComponent
+                 errorTitle={''}
+                 showTxtInputError={false}
+                 showCountryCode={false}
+                 topPlaceHolder={'Name'}
+                 onChangeText={(text)=>setMobileNumber(text)}
+              />
+          </View>
+          <View style={styles.textInputContainer}>
+              <TextInputComponent
+                 errorTitle={''}
+                 showTxtInputError={false}
+                 showCountryCode={false}
+                 topPlaceHolder={'Email ID'}
+                 onChangeText={(text)=>setMobileNumber(text)}
+              />
+          </View>
+          </>}
+          <View style={styles.textInputContainer}>
+              <TextInputComponent
+                 errorTitle={''}
+                 showTxtInputError={false}
+                 showCountryCode={true}
+                 topPlaceHolder={'Phone No.'}
                  onChangeText={(text)=>setMobileNumber(text)}
               />
           </View>
@@ -120,8 +144,8 @@ const styles = StyleSheet.create({
   bodyContainer: {
     flex: 11,
     backgroundColor: Colors.pentaColor,
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
   },
   bodyTopContainer: {
     flex: 7,
@@ -177,7 +201,7 @@ const styles = StyleSheet.create({
   },
   textInputContainer: { 
     paddingHorizontal: 31,
-    paddingVertical: 68,
+    paddingVertical: 8,
   },
 });
 

@@ -4,6 +4,9 @@
  * Colors which will be used in the complete application should be declared in this file.
  */
 export default {
+    white: '#FFFFFF',
+    black: '#000000',
+
     primaryColor: '#FAEFA3',
     secondaryColor: '#682826',
     tertiary: '#8D8D8D',
@@ -13,7 +16,10 @@ export default {
     septaColor: '#3300FF',
     octaColor: '#671167',
     nonaColor: '#972C28',
-    // decaColor: '#E4575B',
-    white: '#FFFFFF',
-    black: '#000000'
+    decaColor: '#DE0808',
+
+    textColor: {
+        primaryColor: '#737373'
+    }
+   
 }

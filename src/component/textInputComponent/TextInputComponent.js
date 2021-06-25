@@ -5,16 +5,29 @@ import {Colors, Assets, Strings} from '../../res/index';
 const TextInputComponent = (props) => {
 
     return(
-         <View style={styles.textInputContainer}>
-             <Text style={styles.countryCodeTxt}>
-                 {Strings.countryCode}
-             </Text>
-             <TextInput
-                style={styles.textInput}
-                maxLength={10}
-                {...props}
-             />
-         </View>
+        <View>
+             <View style={{paddingBottom: 5}}>
+                <Text style={{fontSize: 14, color: Colors.textColor.primaryColor}}>
+                    {props.topPlaceHolder}
+                </Text>
+             </View>
+             <View style={styles.textInputContainer}>
+               {props.showCountryCode&&<Text style={styles.countryCodeTxt}>
+                    {Strings.countryCode}
+                </Text>}
+                <TextInput
+                    style={[styles.textInput,{width: props.showCountryCode ? '85%' : '100%'}]}
+                    maxLength={10}
+                    keyboardType={props.showCountryCode ? 'number-pad' : 'default'}
+                    {...props}
+                />
+            </View>
+            {props.showTxtInputError&&<View>
+                <Text style={{fontSize: 14, color: Colors.decaColor}}>
+                    {props.errorTitle}
+                </Text>
+            </View>}
+        </View>
     )
 }
 

@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { loginAction } from "../../redux/actions";
 import { URL, Strings } from '../../res/index';
 import { LoginComponent } from '../../component/index';
-// import Utility, { showToast, validateEmailAddress, validateEmptyField, _storeData } from "../../utils/Utility";
-import { fetchRequest, fetchMultiPartRequest } from '../../utils/NetworkManager';
+import {NetworkManager, Utility } from '../../utils/index';
 
 
 const SignupScreen = (props) => {
@@ -23,6 +22,7 @@ const SignupScreen = (props) => {
         <View style={styles.container}>
              <LoginComponent
                 backTitle={Strings.signup}
+                isFromSingup={true}
                 {...props}
             />
         </View>

@@ -49,8 +49,8 @@ const BottomTabsNav = () => {
         showLabel: false,
         style: {
           backgroundColor: Colors.secondaryColor,
-          borderTopRightRadius: 20,
-          borderTopLeftRadius: 20,
+          borderTopRightRadius: 0,
+          borderTopLeftRadius: 0,
           height: 70,
         },
       }}>
