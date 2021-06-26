@@ -6,6 +6,7 @@ import CategoryComponent from './categoryComponent/CategoryComponent';
 import BannerComponet from './bannerComponent/BannerComponet'; 
 import AstrologersListComponent from './AstrologersListComponent/AstrologersListComponent'; 
 import TextInputComponent from './textInputComponent/TextInputComponent'; 
+import Loader from './loader/Loader'; 
 
 export {
     HomeHeader,
@@ -15,5 +16,6 @@ export {
     CategoryComponent,
     BannerComponet,
     AstrologersListComponent,
-    TextInputComponent
+    TextInputComponent,
+    Loader,
 }

@@ -4,28 +4,13 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  TextInput,
 } from 'react-native';
 import {Colors, Assets, Strings} from '../../res/index';
-import {HomeHeader, AppButton, TextInputComponent} from '../../component/index';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import {HomeHeader, AppButton, TextInputComponent, Loader} from '../../component/index';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 
 
-const LoginComponent =( props )=> {
-
-  const [mobileNumber, setMobileNumber]=React.useState('')
-
-  const loginCall = () => {
-      if(mobileNumber.length===10){
-         props.navigation.navigate('AppDrawer')
-      }else{
-        alert('Enter valid number')
-      }
-  };
-
-  const signUpCall = () => {
-    alert('SignUpPressed');
-  };
+const LoginComponent=(props)=> {
 
   return (
     <View style={styles.container}>
@@ -37,6 +22,12 @@ const LoginComponent =( props )=> {
         />
       </View>
       <View style={styles.bodyContainer}>
+      <KeyboardAwareScrollView 
+        style={styles.bodyContainer}
+        bounces={true}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.bodyTopContainer}>
           <Text style={styles.loginSignupVia}>
             {props.backTitle == Strings.login
@@ -46,39 +37,42 @@ const LoginComponent =( props )=> {
           {props.isFromSingup&&<>
           <View style={styles.textInputContainer}>
               <TextInputComponent
-                 errorTitle={''}
-                 showTxtInputError={false}
+                 errorTitle={Strings.errorMessage.pleaseEnterName}
+                 showTxtInputError={props.passIsPassNameError}
                  showCountryCode={false}
-                 topPlaceHolder={'Name'}
-                 onChangeText={(text)=>setMobileNumber(text)}
+                 maxLength={21}
+                 topPlaceHolder={Strings.singnUp.name}
+                 value={props.passName}
+                 onChangeText={(name)=>props.setName(name)}
               />
           </View>
           <View style={styles.textInputContainer}>
               <TextInputComponent
-                 errorTitle={''}
-                 showTxtInputError={false}
+                 errorTitle={Strings.errorMessage.pleaseEnterMobile}
+                 showTxtInputError={props.passIsPassEmailError}
                  showCountryCode={false}
-                 topPlaceHolder={'Email ID'}
-                 onChangeText={(text)=>setMobileNumber(text)}
+                 maxLength={30}
+                 topPlaceHolder={Strings.singnUp.emaild}
+                 value={props.passEmail}
+                 onChangeText={(email)=>props.setEmail(email.trim().toLowerCase())}
               />
           </View>
           </>}
           <View style={styles.textInputContainer}>
               <TextInputComponent
-                 errorTitle={''}
-                 showTxtInputError={false}
+                 errorTitle={Strings.errorMessage.pleaseEnterMobile}
+                 showTxtInputError={props.passIsPassMobileError}
                  showCountryCode={true}
                  topPlaceHolder={'Phone No.'}
-                 onChangeText={(text)=>setMobileNumber(text)}
+                 value={props.passMobile}
+                 onChangeText={(mobile)=>props.setMobile(mobile.trim())}
               />
           </View>
         </View>
         <View style={styles.bodyBottomContainer}>
           <View style={styles.buttonContainer}>
             <AppButton
-              onPress={() => {
-                props.backTitle == Strings.login ? loginCall() : signUpCall();
-              }}
+              onPress={props.backTitle == Strings.login ? props.onPressLogin : props.onPressSignup}
               title={props.backTitle}
               titleColor={Colors.white}
               titleFontSize={16}
@@ -128,7 +122,9 @@ const LoginComponent =( props )=> {
             </View>
           </View>
         </View>
+      </KeyboardAwareScrollView>
       </View>
+      {props.passIsShowLoader&&<Loader/>}
     </View>
   );
 };
@@ -142,7 +138,7 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   bodyContainer: {
-    flex: 11,
+    flex: 10,
     backgroundColor: Colors.pentaColor,
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,

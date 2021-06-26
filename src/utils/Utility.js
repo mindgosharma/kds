@@ -4,11 +4,11 @@ import {Constants} from '../res/index';
 
 /**
 * @description:This is utility file
-* @author:Vibhishan
+* @author:Sharma
 * @created_on:18/05/2021
 * @param:
 * @return:
-* @modified_by:Vibhishan
+* @modified_by:Sharma
 * @modified_on:29/05/2021
 */
 

@@ -23,6 +23,11 @@ export default {
     viewAll: 'View All',
     astrologers: 'Astrologers',
     underDevelopment: 'Under Development',
+    singnUp: {
+      name: 'Name',
+      emaild: 'Email ID',
+      phoneNo: 'Phone No.'
+    },
     categoryListData:[
       {
           title:  'All',
@@ -71,5 +76,12 @@ export default {
     {},
     {},
     {},
-]
+],
+errorMessage: {
+  pleaseEnterName: 'Please enter name',
+  pleaseEnterEmail: 'Please enter email',
+  pleaseEnterMobile: 'Please enter mobile'
+
+  
+}
 };
