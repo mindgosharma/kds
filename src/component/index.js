@@ -7,6 +7,7 @@ import BannerComponet from './bannerComponent/BannerComponet';
 import AstrologersListComponent from './AstrologersListComponent/AstrologersListComponent'; 
 import TextInputComponent from './textInputComponent/TextInputComponent'; 
 import Loader from './loader/Loader'; 
+import OtpComponent from './otpComponent/OtpComponent';
 
 export {
     HomeHeader,
@@ -18,4 +19,5 @@ export {
     AstrologersListComponent,
     TextInputComponent,
     Loader,
+    OtpComponent
 }

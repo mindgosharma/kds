@@ -6,11 +6,19 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Colors, Assets, Strings} from '../../res/index';
-import {HomeHeader, AppButton, TextInputComponent, Loader} from '../../component/index';
+import {HomeHeader, AppButton, TextInputComponent, Loader, OtpComponent} from '../../component/index';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 
 
 const LoginComponent=(props)=> {
+   const [firstPin, setFirstPin]=React.useState('')
+   const [secondPin, setSecondPin]=React.useState('')
+   const [thirdPin, setThirdPin]=React.useState('')
+   const [fourthPin, setFourthPin]=React.useState('')
+   const [fifthPin, setFifthPin]=React.useState('')
+   const [sixthPin, setSixthPin]=React.useState('')
+   const enteredOtp=`${firstPin}${secondPin}${thirdPin}${fourthPin}${fifthPin}${sixthPin}`
+
 
   return (
     <View style={styles.container}>
@@ -29,11 +37,11 @@ const LoginComponent=(props)=> {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.bodyTopContainer}>
-          <Text style={styles.loginSignupVia}>
+         {!(props.passShowOtpComponent)&&<Text style={styles.loginSignupVia}>
             {props.backTitle == Strings.login
               ? Strings.loginViaMobileNo
               : Strings.signupViaMobileNo}
-          </Text>
+          </Text>}
           {props.isFromSingup&&<>
           <View style={styles.textInputContainer}>
               <TextInputComponent
@@ -58,7 +66,7 @@ const LoginComponent=(props)=> {
               />
           </View>
           </>}
-          <View style={styles.textInputContainer}>
+         {!(props.passShowOtpComponent)&&<View style={styles.textInputContainer}>
               <TextInputComponent
                  errorTitle={Strings.errorMessage.pleaseEnterMobile}
                  showTxtInputError={props.passIsPassMobileError}
@@ -67,9 +75,22 @@ const LoginComponent=(props)=> {
                  value={props.passMobile}
                  onChangeText={(mobile)=>props.setMobile(mobile.trim())}
               />
-          </View>
+          </View>}
         </View>
-        <View style={styles.bodyBottomContainer}>
+        {
+          props.passShowOtpComponent
+          ?
+          <OtpComponent
+            getFirstPin={setFirstPin}
+            getSecondPin={setSecondPin}
+            getThirdPin={setThirdPin}
+            getFourthPin={setFourthPin}
+            getFifththPin={setFifthPin}
+            getSixthPin={setSixthPin}
+          {...props}
+         />
+          :
+          <View style={styles.bodyBottomContainer}>
           <View style={styles.buttonContainer}>
             <AppButton
               onPress={props.backTitle == Strings.login ? props.onPressLogin : props.onPressSignup}
@@ -121,7 +142,7 @@ const LoginComponent=(props)=> {
               </TouchableOpacity>
             </View>
           </View>
-        </View>
+        </View>}
       </KeyboardAwareScrollView>
       </View>
       {props.passIsShowLoader&&<Loader/>}
