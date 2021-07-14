@@ -1,6 +1,6 @@
 import React,{forwardRef, useRef, useImperativeHandle, useEffect} from 'react';
 import {View, ImageBackground, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
-// import {AppButton} from '../../componet/index';
+import {AppButton} from '../../component/index';
 import {Colors, Assets, Strings, GlobalStyle} from '../../res/index';
 
 const OtpComponent = forwardRef((props, ref) => {
@@ -42,16 +42,20 @@ const OtpComponent = forwardRef((props, ref) => {
          <View>
                <View 
                     style={styles.topComponentContainer}
-               >    
+                >    
                   
-                    {/* <Text style={styles.verifyOtpTitleTxt}>
-                         {props.verifyOtpTitle}
-                    </Text>
+                   
                     <View style={styles.verifyOtpDescriptionContainer}>
-                        <Text style={styles.verifyOtpDescriptionTxt}>
-                             {props.verifyOtpDescription}
-                         </Text>
-                     </View> */}
+                        <Text style={styles.verifyOtpTitleTxt}>
+                            Enter OTP received in your
+                        </Text>
+                        <Text style={styles.verifyOtpTitleTxt}>
+                             mobile to continue
+                        </Text>
+                     </View>
+                     <Text style={{fontSize: 14, color: Colors.hexaColor, lineHeight: 30}}>
+                        OTP
+                     </Text>
                      <View style={styles.otpBoxContainer}>
                         <TextInput
                             textAlign={'center'}
@@ -69,6 +73,7 @@ const OtpComponent = forwardRef((props, ref) => {
                         />
                         <TextInput
                             textAlign={'center'}
+                            textAlignVertical={'center'}
                             maxLength={1}
                             secureTextEntry={true}
                             keyboardType={'number-pad'}
@@ -83,6 +88,7 @@ const OtpComponent = forwardRef((props, ref) => {
                         />
                         <TextInput
                             textAlign={'center'}
+                            textAlignVertical={'center'}
                             maxLength={1}
                             secureTextEntry={true}
                             keyboardType={'number-pad'}
@@ -97,6 +103,7 @@ const OtpComponent = forwardRef((props, ref) => {
                         />
                         <TextInput
                             textAlign={'center'}
+                            textAlignVertical={'center'}
                             maxLength={1}
                             secureTextEntry={true}
                             keyboardType={'number-pad'}
@@ -104,11 +111,15 @@ const OtpComponent = forwardRef((props, ref) => {
                             ref={fourthBox}
                             onChangeText={(fourthPin)=>{
                                 props.getFourthPin(fourthPin)
+                                if(fourthBox!==''){
+                                    fifthBox.current.focus()
+                                }
                             }}
                             
                          />
                         <TextInput
                             textAlign={'center'}
+                            textAlignVertical={'center'}
                             maxLength={1}
                             secureTextEntry={true}
                             keyboardType={'number-pad'}
@@ -116,11 +127,15 @@ const OtpComponent = forwardRef((props, ref) => {
                             ref={fifthBox}
                             onChangeText={(fifthPin)=>{
                                 props.getFifththPin(fifthPin)
+                                if(fifthBox!==''){
+                                    sixthBox.current.focus()
+                                }
                             }}
                             
                          />
                         <TextInput
                             textAlign={'center'}
+                            textAlignVertical={'center'}
                             maxLength={1}
                             secureTextEntry={true}
                             keyboardType={'number-pad'}
@@ -132,45 +147,64 @@ const OtpComponent = forwardRef((props, ref) => {
                             
                          />
                     </View>
+                    <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingVertical: 15}}>
+                        <Text style={{fontSize: 14, color: Colors.hexaColor}}>
+                             Didn’t received OTP ?
+                        </Text>
+                        <TouchableOpacity
+                            style={{borderBottomWidth: 1, borderBottomColor: Colors.septaColor}}
+                        >
+                            <Text style={{color: Colors.septaColor}}>
+                                Resend now
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.buttonContainer}>
+                        <AppButton
+                            onPress={()=>props.navigation.replace('Home')}
+                            title={'Verify'}
+                            titleColor={Colors.white}
+                            titleFontSize={16}
+                            backgroundColor={Colors.secondaryColor}
+                            borderColor={Colors.secondaryColor}
+                        />
+                    </View>
                 </View> 
        </View>   
     )
 })
 
 const styles = StyleSheet.create({
-
     topComponentContainer: {
-        height: GlobalStyle.size.height/3,
         paddingHorizontal: GlobalStyle.size.width/12,
-        justifyContent: 'flex-end',
     },
     verifyOtpTitleTxt: { 
-        fontSize: 26,
-        // fontFamily: Fonts.Butler.Bold,
-        color: Colors.secondaryColor
+        fontSize: 20,
+        color: Colors.hexaColor,
+        textAlign: 'center'
     },
     verifyOtpDescriptionContainer: {
-         paddingTop: 5,
-         paddingBottom: 40
+         paddingBottom: GlobalStyle.size.height/15,
+         marginTop: -GlobalStyle.size.height/35
     },
     verifyOtpDescriptionTxt: { 
         fontSize: 14,
-        // fontFamily: Fonts.SFCompactDisplay.Light,
         color: Colors.textColor.secondary
     },
     otpBoxContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
+        justifyContent: 'space-between'
     },
     otpTxtInput: {
         borderWidth: 1,
         borderColor: Colors.hexaColor,
         borderRadius: 5,
-        width: GlobalStyle.size.width/10,
-        height: GlobalStyle.size.width/10,
-        fontSize: 45,
-        backgroundColor: Colors.white
+        width: GlobalStyle.size.height/18,
+        height: GlobalStyle.size.height/18,
+        fontSize: 20,
+        backgroundColor: Colors.white,
+        color: Colors.hexaColor,
+        fontWeight: 'bold',
     },
     buttonsContainer: {
         flex: 6,
@@ -183,7 +217,6 @@ const styles = StyleSheet.create({
     },
     countDownSecondTxt: {
         fontSize: 16,
-        // fontFamily: Fonts.SFCompactDisplay.Bold,
         color: Colors.primaryColor
     },
     didNotRecieveOtpContainer: { 
@@ -191,7 +224,6 @@ const styles = StyleSheet.create({
         paddingVertical: 12
     },
     didNotRecieveOtpTxt: {
-        // fontFamily: Fonts.SFCompactDisplay.Regular,
         fontSize: 14,
         color: Colors.black
     },
@@ -204,7 +236,6 @@ const styles = StyleSheet.create({
     },
     onPressResendTxt: { 
         fontSize: 18,
-        // fontFamily: Fonts.SFCompactDisplay.Bold,
         color: Colors.primaryColor
     },
     cancelContainer: {
@@ -214,12 +245,14 @@ const styles = StyleSheet.create({
     cancelTxt: {
         color: Colors.textColor.tertiary,
         fontSize: 14,
-        // fontFamily: Fonts.SFCompactDisplay.Regular
     },
     onPressCancel: {
         borderBottomWidth: 1,
         borderColor: Colors.textColor.tertiary
-    }
+    },
+    buttonContainer: {
+        paddingTop: GlobalStyle.size.height/4
+    },
 })
 
 export default OtpComponent;
