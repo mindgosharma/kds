@@ -161,7 +161,7 @@ const OtpComponent = forwardRef((props, ref) => {
                     </View>
                     <View style={styles.buttonContainer}>
                         <AppButton
-                            onPress={()=>props.navigation.replace('Home')}
+                            onPress={()=>props.navigation.replace('AppDrawer')}
                             title={'Verify'}
                             titleColor={Colors.white}
                             titleFontSize={16}

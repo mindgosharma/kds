@@ -51,7 +51,8 @@ const BottomTabsNav = () => {
           backgroundColor: Colors.secondaryColor,
           borderTopRightRadius: 0,
           borderTopLeftRadius: 0,
-          height: 70,
+          height: 60,
+          paddingVertical: 7
         },
       }}>
       <Tab.Screen

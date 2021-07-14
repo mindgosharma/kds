@@ -5,6 +5,7 @@ import {Colors, Assets, Strings } from '../../res/index';
 
 const HomeScreen = (props) => {
 
+    console.log('hello',props)
     return (
         <View style={styles.container}>
              <View style={styles.headerContainer}>
